@@ -5,6 +5,7 @@
 #include <linux/timer.h>
 #include <linux/mm.h>
 #include <linux/sched/clock.h>
+#include <asm/page.h>
 
 #define TIMER_RESTART 5000
 
@@ -29,7 +30,15 @@ static void get_memory_usage(void)
     // Fill the sysinfo struct with memory usage info
     si_meminfo(&si);
     // Log the total ram and free ram using printk()
-    printk(KERN_INFO "Total RAM: %lu, Free RAM: %lu\n", si.totalram, si.freeram);
+    /**NOTE:
+    * Conversion of totalram and freeram into kB based on PAGE_SHIFT
+    * macro borrowed from /fs/proc/meminfo.c implementation of show_val_kb()
+    */
+    printk(
+        KERN_INFO "Total RAM: %lu, Free RAM: %lu\n", 
+        si.totalram << (PAGE_SHIFT - 10), 
+        si.freeram  << (PAGE_SHIFT - 10)
+    );
 }
 
 // Timer callback function that is called whenever the timer expires
