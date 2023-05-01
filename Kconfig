@@ -1,0 +1,7 @@
+config REALTIME_RESOURCE_MONITOR
+	tristate "Real-time System Resource Monitoring Module"
+	default m
+	help
+	  This module monitors and logs system resource usage, including CPU,
+	  memory, and disk usage, in real-time.
+
