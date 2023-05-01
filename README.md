@@ -1,4 +1,3 @@
-# Real-time-System-Resource-Monitoring-Kernel-Module
 # Real-time System Resource Monitoring Kernel Module
 
 
@@ -18,24 +17,26 @@ The kernel module is designed with the following components:
 
 ### Building and Installing the Kernel Module
 1. Download the source code for the kernel module and navigate to the project directory:
+```
 $ git clone https://github.com/etmp/realtime_resource_monitor.git
 $ cd realtime_resource_monitor
+```
 
 2. Compile the kernel module:
-$ make
+`$ make`
 
 After a successful compilation, you should see a resource_monitor.ko file generated in the directory.
 
 3. Load the kernel module:
-$ sudo insmod resource_monitor.ko
+`$ sudo insmod resource_monitor.ko`
 The kernel module will start monitoring system resource usage every 5 seconds.
 
 4. Verify that the kernel module is loaded and working:
-$ dmesg | tail
+`$ dmesg | tail`
 You should see log messages about the kernel module's initialization and resource usage information.
 
 5. Unload the kernel module when you're done:
-$ sudo rmmod resource_monitor
+`$ sudo rmmod resource_monitor`
 
 
 ### Limitations
