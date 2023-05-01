@@ -5,8 +5,8 @@
 This project implements a Linux kernel module that monitors and logs system resource usage, including CPU and memory usage, in real-time. The module collects resource usage information directly from the Linux kernel without relying on procfs or sysfs interfaces.
 
 ### Prerequisites
--Familiarity with Linux kernel programming and kernel modules
--A Linux system with kernel development tools (e.g., GCC, make) and kernel headers installed
+- Familiarity with Linux kernel programming and kernel modules.
+- A Linux system with kernel development tools (e.g., GCC, make) and kernel headers installed.
 
 ### Module Architecture
 The kernel module is designed with the following components:
@@ -40,7 +40,7 @@ You should see log messages about the kernel module's initialization and resourc
 
 
 ### Limitations
-The current implementation provides a simplified representation of CPU usage using the scheduler's clock, which is not a perfect indicator of CPU utilization. A more accurate approach would involve calculating the percentage of time spent in user mode, system mode, and idle mode. However, this would require a more complex implementation and might not be suitable for a beginner's kernel module project.
+The current implementation provides a simplified representation of CPU usage using the scheduler's clock, which is not a perfect indicator of CPU utilization. A more accurate approach would involve calculating the percentage of time spent in user mode, system mode, and idle mode. 
 
 ### Future Enhancements
 Improve CPU usage calculation for a more accurate representation of system utilization.
